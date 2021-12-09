@@ -15,6 +15,46 @@ library(jmvcore)
 # remotes::install_github("statisticsforsocialscience/dataforsocialscience")
 
 library(dataforsocialscience)
+library(palmerpenguins)
 
+palmerpenguins::penguins
+
+# Hat die Insel auf dem ein Pinguin lebt, einen Einfluss auf sein Gewicht?
+# Torgersen
+# Biscoe
+# Dream
+
+jmv::ANOVA(penguins, dep = body_mass_g, factors = c(island, species),
+           postHoc = body_mass_g ~ island,
+           emMeans = body_mass_g~ island,
+           emmTables = TRUE,
+           emmPlots = TRUE)
+nrow(penguins)
+
+
+
+
+penguins %>% dplyr::select(island, species) %>% table()
+
+
+jmv::ANOVA(penguins, dep = body_mass_g, factors = c("sex"),
+           emMeans = body_mass_g ~ sex,
+           emmTables = TRUE,
+           emmPlots = TRUE)
+
+
+jmv::ANOVA(penguins, dep = body_mass_g, factors = c("island", "sex"),
+           emMeans = body_mass_g ~ island:sex,
+           emmTables = TRUE,
+           emmPlots = TRUE)
+```
+
+
+unabhängige Variable: Faktor
+abhängige Variable: Skala (kontinuierlich)
+
+
+```{r}
+robo_care 
 ```
 
