@@ -1,0 +1,20 @@
+---
+title: "Analyse"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(jmv)
+library(jmvcore)
+
+
+# auf Windows müssen die RTools installiert sein.
+# install.packages("remotes")
+# remotes::install_github("statisticsforsocialscience/dataforsocialscience")
+
+library(dataforsocialscience)
+
+```
+
